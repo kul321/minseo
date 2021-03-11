@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+#myDiv {
+	border: 1px solid #ccc;
+}
+</style>
+<script type="text/javascript">
+window.onload = function(){
+	
+	//자식요소를 각각의 영역으로 생각하지 않는다
+	// -> mouseleave
+	myDiv.onmouseenter = function(){
+		console.log("enter")
+	}
+	
+	//자식요소와 구분된 영역을 따로 생각한다
+	// ->mouseout
+	myDiv.onmouseover = function(){
+		console.log("over")
+	}
+}
+</script>
+</head>
+<body>
+
+<div id="myDiv">
+	<button>하하</button>
+	호호
+</div>
+
+</body>
+</html>

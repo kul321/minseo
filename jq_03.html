@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript"
+src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+
+<script type="text/javascript">
+
+//jQuery 스타일의 DOM객체 이용 코드
+$(document).ready(function(){
+
+	//jQuery로 #p1 노드 얻기
+	var jQueryP1 = $("#p1")
+	
+	//js로 #p1 노드 얻기
+	var jsP1 = document.getElementById("p1")
+// 	var jsP1 = p1 //축약코드
+
+	console.log("--- jQuery ---")
+	console.log( jQueryP1 )
+	
+	console.log("--- JS ---")
+	console.log( jsP1 )
+	
+	//---------------------------------
+	//순수JS DOM객체를 이용한 스타일(CSS)지정
+	jsP1.style.color = "red"
+	
+	//jQuery DOM객체에 JS방식으로 코드 적용 못함
+// 	jQueryP1.style.background = "#ccc"
+
+	//jQuery DOM객체를 이용한 스타일(CSS) 지정
+	jQueryP1.css("border","1px solid #ccc")
+	
+	//------------------------------------
+	jQueryP1[0].style.background = "blue"
+	
+	//------------------------------------
+	
+	console.log("--- $('p')---")
+	console.log( $("p"))
+	
+	// 선택된 요소가 여러 개(3개)여도 css()함수는
+	//선택된 모든 요소에 스타일을 적용한다
+	$("p").css("font-style","italic")
+	
+	// jqDOM.css() 함수는 인라인속성으로 적용됨
+	//  -> HTML태그의 style속성값으로 추가된다
+	
+	//jQuery DOM객체, JS DOM객체를 구분해서 사용
+	
+	//JS COM 객체
+	var p3 = document.getElementById("p3")
+	
+	//jQuery 객체
+	var $p3 = $("#p3")
+	
+	console.log("--- JS DOM ---")
+	console.log( p3 )
+	
+	console.log("--- JQ DOM ---")
+	console.log( $p3 )
+	
+	//--------------------------------
+	console.log("--- JS ---")
+	console.log( p3 )
+	
+	//JS DOM 객체 -> jQuery DOM 객체
+	var $p3DOM = $( "p3" )
+	
+	console.log("--- jQuery ---")
+	console.log( $p3DOM )
+})
+</script>
+</head>
+<body>
+<div>
+	<p id="p1">하이</p>
+	<p class="p2">Hello</p>
+	<p id="p3">Welcome</p>
+
+</div>
+</body>
+</html>

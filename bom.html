@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+//전역 변수
+var data = 123;
+console.log( data )
+
+//전역변수는 window객체에 등록되어있다
+console.log( window.data )
+
+//window객체에는 각종 내장함수들이 등록되어있다
+// window.setTimeout( function() {
+// 	window.alert("윈도우 객체")
+// }, 2000);
+
+// window. 생략할 수 있음
+//-----------------------------------
+
+//팝업창을 띄우는 함수 - open()
+
+// window.open( url, name, option ) : windowid
+//		url - 팝업창에 표시될 주소
+//		name - 팝업창의 이름을 설정한다
+//		option - 팝업창 설정 항목
+
+//open("https://www.naver.com","네이버")
+
+// "_blank" -새창
+// open("https://www.naver.com","_blank")
+
+// "_self" -현재창
+// open("https://www.naver.com","_self")
+
+// open("https://www.naver.com","네이버", "width=500,height=500, top=100, left=200")
+
+// var wid = open("/tag/tag_05.html","네이버","width=300, height=300, top=100,left=1500")
+
+// setTimeout(function(){
+// 	wid.close(); //팝업창 닫기
+// }, 1000)
+
+//윈도우아이디.close()
+//	특정 윈도우(창)을 닫는다
+
+
+console.log("--- navigator ---")
+
+//브라우저 + 운영체제의 정보 속성(property)
+console.log( navigator.userAgent )
+
+//언어권 정보, Locale 정보
+console.log( navigator.language )
+
+//브라우저 벤더, 배포회사
+console.log( navigator.vendor )
+
+console.log("--- location ---")
+//URL 정보 객체
+
+// http://localhost:8088/dom/bom.html
+
+console.log( location.protocol ) //프로토콜
+console.log( location.host )	 //도메인
+console.log( location.hostname ) //호스트네임
+console.log( location.port )	 //포트번호
+
+//자원(resource)의 경로(주소)
+console.log( location.pathname )
+
+//전체 URL 정보
+console.log( location.href )
+
+
+// location.href = "/tag/tag_06.html"
+// location.href = "https://www.naver.com"
+
+// location.href 속성의 값을 변경하면 현재 보고있던 페이지가 이동된다 
+// -> 페이지 이동
+// -><a>태그의 링크를 클릭한 것과 같은 효과
+// ->자바스크립트를 이용한 페이지 이동 코드
+// ->location.href = "이동할 페이지 URL"
+
+//----------------------------------------
+console.log("--- history ---")//인터넷 사용 기록
+
+//이전 방문 페이지로 이동, 이전으로 가기
+// history.back()
+
+//다음 방문 페이지로 이동, 다음으로 가기
+// history.forward()
+
+//history.go(n)
+//	n값은 정수
+//	히스토리페이지를 이동할 개수를 지정한다
+
+//  0이면 현재 페이지
+//	양수면 다음 방문 페이지로 가기
+//	음수면 이전 방문 페이지로 가기
+
+// history.go(-1) //이전으로 가기(== history.back() ) 가장 많이 사용한다
+
+console.log("---screen---")//모니터화면 정보
+
+//브라우저를 최대화했을 때 차지할 수 있는 영역
+//	-> 픽셀값으로 수치가 나온다
+//	-> 시작메뉴 높이(40px) 제외된다
+console.log( screen.availWidth )
+console.log( screen.availHeight )
+
+console.log("-----")
+
+//모니터 해상도의 크기(시작메뉴 무시)
+console.log( screen.width)
+console.log( screen.height)
+
+//브라우저의 외곽 크기
+console.log("-----")
+console.log( window.outerWidth )
+console.log( window.outerHeight )
+
+console.log("-----")
+
+//브라우저의 내부 크기
+// <body>태그가 보여지는 곳의 크기
+// 메뉴, 탭, 북마크, 스크롤 등을 제외하고 계산
+console.log( window.innerWidth )
+console.log( window.innerHeight )
+
+console.log("-----")
+
+//브라우저의 위치
+//  브라우저의 좌측 상단 지점을 기준으로 표현
+
+//IE9.0 이상 브라우저, Non-IE 브라우저에서 사용
+console.log( window.screenX )
+console.log( window.screenY )
+
+console.log("-----")
+
+console.log( window.screenLeft )
+console.log( window.screenTop )
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

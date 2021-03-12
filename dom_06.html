@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+//CONTENT 텍스트 밑에 ul추가하기
+// -> #content의 자식으로 추가
+
+//ul목록 태그 안에 li로 작성
+//  Javascript
+//  DOM
+//  innerHTML
+
+window.onload = function() {
+	//#content DOM객체 얻어오기
+	var content = document.getElementById("content")
+	console.log(content)
+	
+	content.innerHTML += "<ul id='u'></ul>"
+	
+	//#u DOM객체 얻어오기
+	var u = document.getElementById("u")
+	console.log(u)
+	
+	
+	//ul태그에 li태그 추가
+	u.innerHTML = "<li>Javascript</li>"
+	u.innerHTML += "<li>DOM</li>"
+	u.innerHTML += "<li>innerHTML</li>"
+	
+	//------------------------------------
+	
+	var h = ""
+	h += "<ul>"
+	h += "<li>Javascript</li>"
+	h += "<li>DOM</li>"
+	h += "<li>innerHTML</li>"
+	h += "</ul>"
+	
+	document.getElementById("content2").innerHTML += h
+	
+	//-------------------------------------------------
+	
+	//<ul>태그 생성
+	var u3 = document.createElement("ul");
+	
+	//<li>태그 생성하고 텍스트 노드 추가
+	var li1 = document.createElement("li");
+	var txt1 = document.createTextNode("Javascript");
+	li1.appendChild( txt1 );
+	
+	//<li>태그 생성하고 텍스트 노드 추가
+	var li2 = document.createElement("li");
+	var txt2 = document.createTextNode("DOM");
+	li2.appendChild( txt2 );
+	
+	//<li>태그 생성하고 텍스트 노드 추가
+	var li3 = document.createElement("li");
+	var txt3 = document.createTextNode("innerHTML");
+	li3.appendChild( txt3 );
+	
+	//<ul>태그에 <li>태그들 추가
+	u3.appendChild(li1)
+	u3.appendChild(li2)
+	u3.appendChild(li3)
+	
+	//#content3에 u3를 추가
+	document.getElementById("content3").appendChild( u3 );
+	
+	//------------------------------------
+	
+	//<ul>태그 생성
+	var u4 = document.createElement("ul");
+	
+	//<li>태그 생성
+	var li41 = makeLi( "Javascript");
+	var li42 = makeLi( "DOM" );
+	var li43 = makeLi( "innerHTML" );
+	
+	//<ul>태그에 <li>태그 추가
+	u4.appendChild(li41)
+	u4.appendChild(li42)
+	u4.appendChild(li43)
+	
+	//#content4에 u4 추가
+	document.getElementById("content4").appendChild(u4)
+} //window.onload end
+
+function makeLi( textString ) {
+	//<li>태그 생성하고 텍스트 노드 추가
+	var li = document.createElement("li");
+	var txt = document.createTextNode( textString );
+	li.appendChild( txt );
+	
+	//<li>태그 요소 DOM객체 반환
+	return li;
+	
+}
+</script>
+</head>
+<body>
+
+<div id="content">CONTENT</div>
+
+<div id="content2">CONTENT2</div>
+<hr>
+<div id="content3">CONTENT3</div>
+<hr>
+ 
+<div id="content4">CONTENT4</div>
+<hr>
+
+</body>
+</html>

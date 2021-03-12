@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+window.onload = function(){
+	//<body>태그의 DOM객체로 출력
+	console.log( document.body )
+	
+	//<body>태그의 내용물(컨텐츠)를 String으로 출력
+	console.log( document.body.innerHTML )
+	
+	//컨텐츠를 전체 치환하기
+	document.body.innerHTML = "<div><h1>INNER HTML</h1></div>"
+	
+	//컨텐츠 내용에 추가하기(기존값 유지함)
+	document.body.innerHTML += "<h3>Hello</h3>"
+	
+	//---------------------------------------------
+	//새로운 <div>노드 생성
+	var div = document.createElement("div")
+	
+	div.innerHTML = "<h3>DIV innerHTML</h3>"
+	div.innerHTML += "<p>테스트</p>"
+	
+	//<div> DOM객체를 <body>태그에 추가하기
+	//  -> innerHTML속성을 이용해서 DOM객체 추가 불가
+// 	document.body.innerHTML += div
+
+	//DOM객체를 추가할 때에는 appendChild() 사용
+	document.body.appendChild( div )
+	
+	//---------------------------------------------
+	
+	//innerHTML 속성은 String타입의 태그문자열 사용
+	
+	//String타입으로 미리 작성
+	var h = "";
+	h += "<h3>테스트</h3>";
+	h += "<p>하나</p>";
+	h += "<p>둘</p>";
+	h += "<p>셋</p>";
+	h += "<p>넷</p>";
+	
+	console.log( h )
+	
+	//확인
+	console.log( h )
+	
+	//준비해놓은 String을 <div>에 추가하기
+	div.innerHTML += h;
+	//--------------------------------------
+	
+	console.log("--- innerHTML ---")
+	console.log( div.innerHTML )
+	
+	console.log("--- innerText---")
+	console.log( div.innerText )
+	//--------------------------------------
+	div.innerText += "<h1>하이</h1>"
+}
+</script>
+</head>
+<body>
+
+<div id="content">CONTENT</div>
+
+</body>
+</html>
